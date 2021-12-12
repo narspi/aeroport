@@ -1,0 +1,26 @@
+<section class="map">
+  <div class="container">
+    <h2 class="title map__title" data-aos="fade-down">Как мы работаем?</h2>
+    <div class="map__inner">
+      <div class="map__content">
+        <ol class="map__list">
+          {{#each map__list}}
+          <li class="map__list-item">{{this}}</li>
+          {{/each}}
+        </ol>
+      </div>
+      <div class="map__block">
+        <div class="map__block-wrap">
+          <div class="map__block-inner" id="wrap-map">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac40a88d164696d8a3874da6787d42cb06a4979c88903d7589d7ebb243d512f58&amp;source=constructor"
+              width="500"
+              height="400"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

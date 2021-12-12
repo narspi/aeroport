@@ -1,0 +1,150 @@
+.advantages {
+    background-color: #F6F6F6;
+    border-bottom: 1px solid transparent;
+    padding-top: 150px;
+    &__title {
+        margin-top: 0;
+        padding-top: 30px;
+        margin-bottom: 60px;
+    }
+
+    &__items {
+        display: flex;
+        text-align: center;
+        margin: 0 -15px;
+        padding-bottom: 50px;
+    }
+
+    &__item {
+        padding: 0 15px;
+        flex: 1 1 100%;
+        a {
+            color: #3a2c99;
+        }
+    }
+
+    &__item::before {
+        display: inline-block;
+    }
+
+    &__item:nth-child(1):before {
+        content: url(../images/advantages-1.png);
+    }
+
+    &__item:nth-child(2):before {
+        content: url(../images/advantages-2.png);
+    }
+
+    &__item:nth-child(3):before {
+        content: url(../images/advantages-3.png);
+    }
+
+    &__item-title {
+        font-size: 40px;
+    }
+
+    &__item-text {
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 0;
+        text-align: left;
+    }
+
+    &__aside {
+        position: relative;
+        padding-right: calc((100vw - 1400px) / 2);
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-left: auto;
+        margin-bottom: -200px;
+        background-color: #3a2c99;
+        border-radius: 30px 0 0 30px;
+        max-width: 57%;
+    }
+
+    &__list {
+        margin: 0px 60px 0px 100px;
+        color: #fff;
+    }
+
+    &__list-item {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 45px;
+        &::marker {
+            content: "- "
+        }
+    }
+
+    @media (max-width: 1100px) {
+        padding-top: 100px;
+
+        &__title {
+            text-align: center;
+        }
+
+        &__items {
+            display: block;
+        }
+
+        &__item {
+            &::before {
+                vertical-align: middle;
+            }
+        }
+
+        &__item-title {
+            display: contents;
+            vertical-align: middle;
+        }
+
+        &__aside {
+            max-width: 70%;
+        }
+    }
+
+    @media (max-width: 800px) {
+        &__aside {
+            max-width: 90%;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__title {
+            font-size: 70px;
+            padding-top: 0;
+        }
+
+        &__item {
+            &::before {
+                transform: scale(.5);
+            }
+            &:nth-child(1)::before,&:nth-child(2)::before,&:nth-child(3)::before {
+                content: "";
+            }
+
+            
+        }
+
+        &__item-title {
+            font-size: 24px;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        &__item-text {
+            margin-top: 0;
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        &__list {
+            margin: 0 15px 0 40px;
+        }
+
+        &__list-item {
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}

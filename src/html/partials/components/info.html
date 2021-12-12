@@ -1,0 +1,35 @@
+<section class="info" id="blog">
+  <div class="container info__inner">
+    <div class="info__news">
+      <h2 class="info__news-head title" data-aos="fade-down"><b>ПОЛЕЗНЫЕ</b><br />НОВОСТИ</h2>
+      <div class="info__news-content">
+        {{#each info__news}}
+        <div class="info__news-item">
+          <h4 class="info__news-title">
+            {{this.title}}
+          </h4>
+          <div class="info__news-text">
+            {{#tags}}{{this.text}}{{/tags}}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <p><a name="faq"></a></p>
+    <div class="info__questions" id="accordion-animation">
+      <h3 class="info__questions-head title" data-aos="fade-down" data-aos-delay="500"><b>ЧАСТО ЗАДАВАЕМЫЕ</b><br />ВОПРОСЫ</h3>
+      <div class="info__questions-content">
+        {{#each info__questions}}
+        <div class="info__questions-item">
+          <h4 class="info__questions-title">
+            <button class="info__questions-btn" data-accordion>{{this.title}}</button>
+          </h4>
+          <p class="info__questions-text">
+           {{this.text}}
+          </p>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

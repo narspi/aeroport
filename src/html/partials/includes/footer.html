@@ -1,0 +1,47 @@
+<footer class="footer" id="contancs">
+  <div class="container">
+    <h2 class="footer__title">КОНТАКТЫ</h2>
+    <ul class="footer__contacts">
+        <li class="footer__contacts-item">
+            <a href="tel:+79180282321" class="footer__tel">+7 918 028 23 21</a>
+        </li> 
+        <li class="footer__contacts-item">
+            <a href="https://api.whatsapp.com/send?phone=79180282321" class="footer__whatsup">WhatsApp +79180282321</a>
+        </li>
+        <li class="footer__contacts-item">
+            <a href="https://t.me/Izrashi_ru" class="footer__telegram">Telegram @izrashi_ru</a>
+        </li>
+        <li class="footer__contacts-item">
+            <a href="https://instagram.com/izrashi.ru" class="footer__instagram">instagram.com/izrashi.ru</a>
+        </li>
+    </ul>
+    <p class="footer__copy">
+      © izrashi.ru, Беларусь, Мінск, Нацыянальны аэрапорт Мінск
+    </p>
+    <p class="footer__info">
+      Оставляя заявку на нашем сайте вы соглашаетесь с обработкой ваших
+      персональных данных. Мы ответсвенно относимся к вашей конфиденциальности и
+      не допускаем передачу ваших контактных данных третьм лицам. Наш сайт в
+      целях маркетинговой аналитики предусматривает установку Cookies на ваш
+      компьютер, тем не менее данная информарция, собираемая таким образом
+      является деперсонализированной и не может быть использована иначе чем в
+      аналитических целях. Информация указанная на сайте носит исключительно
+      рекламный характер и не является публичной офертой. информация
+      опубликованная на сайте, носит исключительно информационный характер и ни
+      в коем случае не являются призывом к действию.
+    </p>
+  </div>
+</footer>
+<div class="fixed-block" id="fixed-block">
+  <div class="container fixed-block__inner"></div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal__inner">
+      <ul>
+          {{#each list}}
+          <li><a href="{{ this.anchor }}">{{ this.title }}</a></li>
+          {{/each}}
+      </ul>
+  </div>
+</div>

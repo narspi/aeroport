@@ -1,0 +1,92 @@
+<header class="header">
+  <div class="container header__inner" id="header-inner">
+    <div class="header__top" id="sticky-header">
+      <div>
+        <a class="logo">IZRASHI.RU</a>
+        <p class="header__descr">
+          Осуществляем вылеты/прилеты за<br />границу через Минск всех желающих
+        </p>
+      </div>
+      <nav class="menu">
+        <ul>
+          {{#each list}}
+          <li><a href="{{ this.anchor }}">{{ this.title }}</a></li>
+          {{/each}}
+        </ul>
+        <button class="menu__burger" id="menu-burger">
+          <svg
+            class="burger-btn"
+            width="47"
+            height="31"
+            viewBox="0 0 47 31"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <line
+              class="burger-btn__line"
+              y1="20"
+              x2="26"
+              y2="20"
+              stroke="#fff"
+              stroke-width="2"
+            />
+            <path
+              class="burger-btn__line bottom"
+              d="M0 28H26C36.6628 25.678 40.4767 22.6076 41 12C40.5728 7.27749 39.0593 5.95264 35 5.00001C29.277 4.82055 26.4895 5.98273 22.5 11L4 29.5"
+              stroke="#fff"
+              stroke-width="2"
+            />
+            <path
+              class="burger-btn__line top"
+              d="M0 12H26C38.8463 12.5208 42.989 11.4136 45 7C45.101 3.91968 42.9891 2.77515 34.5 2C30.256 1.80911 27.675 4.56546 23 10.5L4 29.5"
+              stroke="#fff"
+              stroke-width="2"
+            />
+          </svg>
+        </button>
+      </nav>
+    </div>
+    <div class="header__bottom">
+      <div class="header__bottom-inner">
+        <h1 class="header__title">
+          <b>IZRASHI.RU</b> - миграционная компания, которая уже более трех лет
+          помогает нашим туристам с ограничением ФССП вылететь за границу.
+        </h1>
+        <div class="header__contacts">
+          <div class="header__contacts-head">
+            <b>СВЯЖИТЕСЬ С НАМИ</b><br />
+            ПРЯМО СЕЙЧАС
+          </div>
+          <ul class="header__contacts-list">
+            <li class="header__contacts-item">
+              <a class="header__tel" href="tel:+79180282321"
+                >+7 918 028 23 21</a
+              >
+            </li>
+            <li class="header__contacts-item">
+              <a
+                href="https://api.whatsapp.com/send?phone=79180282321"
+                class="header__whatsup"
+                >WhatsApp +79180282321</a
+              >
+            </li>
+            <li class="header__contacts-item">
+              <a href="https://t.me/Izrashi_ru" class="header__telegram"
+                >Telegram @izrashi_ru</a
+              >
+            </li>
+            <li class="header__contacts-item">
+              <a
+                href="https://www.instagram.com/izrashi.ru"
+                class="header__instagram"
+                >instagram.com/izrashi.ru</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+  

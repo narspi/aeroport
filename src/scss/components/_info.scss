@@ -1,0 +1,131 @@
+.info {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    background-color: #F6F6F6;
+    &__inner {
+        display: flex;
+    }
+
+    &__news {
+        width: 50%;
+        padding-right: 100px;
+    }
+
+    &__questions {
+        width: 50%;
+    }
+
+    &__news-head {
+        margin: 0;
+        margin-bottom: 50px;
+    }
+
+    &__questions-content {
+        margin-bottom: 20px;
+    }
+
+    &__questions-head {
+        font-size: 60px;
+        text-align: right;
+        font-weight: 400;
+        color: #3A2C99;
+        padding-top: 40px;
+        margin: 0;
+        margin-bottom: 60px;
+    }
+
+    &__news-item {
+        color: #575757;
+        margin-bottom: 50px;
+    }
+    
+    &__news-title {
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 45px;
+        margin: 0;
+    }
+
+    &__news-text {
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0;
+    }
+
+    &__questions-title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 45px;
+    }
+
+    &__questions-btn {
+        display: block;
+        width: 100%;
+        background-image: linear-gradient(180deg, #FFFDFD 0%, rgba(208, 208, 208, 0.027) 117.62%);
+        filter: drop-shadow(-5px 4px 6px rgba(255, 255, 255, 0.6));
+        border-radius: 30px 0px 0px 30px;
+        text-align: left;
+        padding: 30px 40px 30px 30px;
+        cursor: pointer;
+        position: relative;
+        &:hover {
+            background-image: linear-gradient(180deg, #3a2c99 0%, rgba(208, 208, 208, 0.027) 117.62%);
+            color: #fff;
+        }
+
+        &::before {
+            content:url(../images/arrow-down.svg);
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+    }
+    
+    &__questions-text {
+        margin: 0;
+        padding-left: 30px;
+        padding-right: 10px;
+        font-size: 24px;
+        display: none;
+    }
+
+    @media (max-width: 1100px) {
+        &__inner {
+            display: block;
+        }
+
+        &__news,&__questions {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        &__questions-btn {
+            padding: 30px 50px 30px 30px;
+        }
+    }
+
+
+    @media (max-width: 600px) {
+        padding-top: 50px;
+        &__news-head {
+            font-size: 70px;
+            margin-bottom: 30px
+        }
+
+        &__questions-head {
+            font-size: 50px;
+        }
+
+        &__questions-title {
+            font-size: 24px;
+            line-height: 1.2;
+        }
+
+        &__questions-text {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+    }
+}

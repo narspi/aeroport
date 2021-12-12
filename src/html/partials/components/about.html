@@ -1,0 +1,23 @@
+<section class="about" id="about">
+    <div class="about__wrap">
+        <div class="about__inner">
+            <div class="about__context">
+                <div class="about__context-inner">
+                    <h2 class="about__title title" data-aos="fade-down">
+                        {{ about__title }}
+                    </h2>
+                    <div class="about__text" data-aos="zoom-out-up" data-aos-delay="250">
+                        {{#each about__content}}
+                            <p>{{ this }}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="about__video" data-aos="fade-up-left" data-aos-delay="500">
+                <div class="about__video-inner">
+                    {{#tags}}{{about__iframe}}{{/tags}}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

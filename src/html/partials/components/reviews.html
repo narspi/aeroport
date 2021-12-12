@@ -1,0 +1,63 @@
+<section class="reviews" id="otzuv">
+  <div class="container">
+    <h2 class="reviews__title title" data-aos="fade-down"><b>ВАШИ</b> ОТЗЫВЫ</h2>
+    <div class="reviews__slider-wrap">
+      <div class="reviews__video swiper-container">
+        <div class="swiper-wrapper">
+          {{#each reviews__video}}
+          <div class="swiper-slide">
+            <div class="reviews__video-inner">
+              {{#tags}}{{this}}{{/tags}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <button class="reviews__video-next">
+        <svg viewBox="0 0 5 9">
+          <path
+            d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z"
+          />
+        </svg>
+      </button>
+      <button class="reviews__video-prev">
+        <svg viewBox="0 0 5 9">
+          <path
+            d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="reviews__slider-wrap">
+      <div class="reviews__people swiper-container">
+        <div class="swiper-wrapper">
+          {{#each reviews__people}}
+          <div class="swiper-slide">
+            <div class="reviews__people-inner">
+              <div class="reviews__people-name">{{this.name}}</div>
+              <time>{{this.data}}</time>
+              <p class="reviews__people-text">
+                {{this.text}}
+              </p>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      <button class="reviews__people-next">
+        <svg viewBox="0 0 5 9">
+          <path
+            d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z"
+          />
+        </svg>
+      </button>
+      <button class="reviews__people-prev">
+        <svg viewBox="0 0 5 9">
+          <path
+            d="M0.419,9.000 L0.003,8.606 L4.164,4.500 L0.003,0.394 L0.419,0.000 L4.997,4.500 L0.419,9.000 Z"
+          />
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>

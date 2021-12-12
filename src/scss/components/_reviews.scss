@@ -1,0 +1,166 @@
+.reviews {
+  padding-top: 250px;
+  &__slider-wrap {
+    position: relative;
+    padding: 0 100px;
+  }
+
+  &__video-inner {
+    padding-top: calc(315 / 560 * 100%);
+    position: relative;
+    & iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__video-next,
+  &__video-prev,
+  &__people-next,
+  &__people-prev {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    width: 50px;
+    & svg {
+      transition: fill 0.3s;
+    }
+    &:hover svg {
+      fill: #3a2c99;
+    }
+
+    &.swiper-button-disabled {
+      cursor: not-allowed;
+      svg {
+        fill: #000;
+      }
+    }
+  }
+
+  &__video-prev,
+  &__people-prev {
+    left: 0;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  &__video-next,
+  &__people-next {
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &__people-prev {
+    left: 50px;
+  }
+
+  &__people-next {
+    right: 50px;
+  }
+
+  &__people {
+    padding: 100px 0;
+  }
+
+  &__people-inner {
+    margin: 0 60px;
+    padding: 40px;
+    box-shadow: 3px 6px 10px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    height: 100%;
+  }
+
+  &__people-name {
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  @media (max-width: 1100px) {
+    &__people-inner {
+      margin: 0 15px;
+    }
+
+    &__people-next {
+      right: 15px;
+    }
+
+    &__people-prev {
+      left: 15px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__slider-wrap {
+      padding: 0 30px;
+    }
+
+    &__video-next,
+    &__video-prev,
+    &__people-next,
+    &__people-prev {
+      width: 20px;
+    }
+
+    &__people-next {
+      right: 0;
+    }
+
+    &__people-prev {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__title {
+      font-size: 60px;
+      margin-top: 0;
+    }
+
+    &__slider-wrap {
+      padding: 0;
+    }
+
+    &__video {
+      padding-bottom: 50px;
+    }
+
+    &__people {
+      padding-top: 20px;
+      padding-bottom: 100px;
+    }
+
+    &__video-next,
+    &__video-prev,
+    &__people-next,
+    &__people-prev {
+      top: unset;
+      right: unset;
+      bottom: -15px;
+      left: 50%;
+      z-index: 1;
+    }
+
+    &__video-next,
+    &__people-next {
+      left: 50%;
+      bottom: -19px;
+
+    }
+
+    &__video-prev,
+    &__people-prev {
+        left: 50%;
+        transform: translateX(-150%) translateY(-50%) rotate(180deg);
+    }
+
+    &__people-prev {
+        bottom: 15px;
+    }
+
+    &__people-next {
+        bottom: 11px;
+    }
+  }
+}
