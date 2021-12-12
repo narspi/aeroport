@@ -23,6 +23,8 @@ const postcss = require('gulp-postcss');
 const webpInCss = require('webp-in-css/plugin');
 const postcssCombineMediaQuery = require('postcss-combine-media-query');
 const postcssSortMediaQueries = require('postcss-sort-media-queries');
+const uglifyEs = require('gulp-uglify-es').default;
+const htmlmin = require('gulp-htmlmin');
 
 // Собирает все файлы html в страницы
 
@@ -37,6 +39,10 @@ const htmlInclude = () => {
         data: 'src/html/data/'
     }))
     // .pipe(validator())
+    .pipe(htmlmin({ 
+        collapseWhitespace: true,
+        minifyJS: true 
+    }))
     .pipe(dest('app/'))
     .pipe(sync.stream());
 }
@@ -193,6 +199,7 @@ const fonts = async () => {
 
 const translateJs = () => {
     return src('./src/js/**/*.js')
+    .pipe(uglifyEs())
     .pipe(dest('app/js'))
     .pipe(sync.stream())
 }
@@ -233,6 +240,7 @@ exports.build = build;
 exports.libsJs = libsJs;
 exports.imagesCompress = imagesCompress;
 exports.watcher = watcher;
+exports.translateJs = translateJs;
 
 
 

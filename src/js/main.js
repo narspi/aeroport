@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.style.height = "0px";
         dropdown.style.overflow = "hidden";
         setTimeout(() => {
-          dropdown.style.transition = "height 1s";
+          dropdown.style.transition = "height .5s";
           dropdown.style.height = height;
           dropdown.addEventListener(
             "transitionend",
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
         });
       } else {
-        dropdown.style.transition = "height 1s";
+        dropdown.style.transition = "height .5s";
         const height = style.height;
         dropdown.style.height = height;
         dropdown.style.overflow = "hidden";
