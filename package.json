@@ -34,6 +34,7 @@
   "dependencies": {
     "aos": "^3.0.0-beta.6",
     "focus-visible": "^5.2.0",
+    "lazysizes": "^5.3.2",
     "normalize.css": "^8.0.1",
     "swiper": "^6.4.5"
   }

@@ -63,11 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         if (!fixedBlock.classList.contains("show")) {
           if (currentPageYOffset > window.pageYOffset) {
-            //fixedBlock.classList.add("show");
+            fixedBlock.classList.add("show");
+            setTimeout(()=>{
+              fixedBlock.classList.remove("show");
+            },3000)
           }
         } else {
           if (currentPageYOffset < window.pageYOffset) {
-            //fixedBlock.classList.remove("show");
+            fixedBlock.classList.remove("show");
           }
         }
       }
