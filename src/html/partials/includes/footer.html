@@ -32,13 +32,10 @@
     </p>
   </div>
 </footer>
-<div class="fixed-block" id="fixed-block">
-  <div class="container fixed-block__inner"></div>
-</div>
 
 <div class="modal" id="modal">
   <div class="modal__inner">
-      <ul>
+      <ul id="modal-menu">
           {{#each list}}
           <li><a href="{{ this.anchor }}">{{ this.title }}</a></li>
           {{/each}}

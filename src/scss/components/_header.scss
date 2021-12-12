@@ -215,22 +215,6 @@
     }
 }
 
-.fixed-block {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background-color: #fff;
-    z-index: 100;
-    transform: translateY(-100%);
-    transition: transform .5s,box-shadow .5s;
-    font-family: $header-fonts,sans-serif; 
-    &.show {
-        box-shadow: 0 4px 5px #000;
-        transform: translateY(0);
-    }
-}
-
 .burger-btn {
     -moz-user-select: none;
     -webkit-user-select: none;

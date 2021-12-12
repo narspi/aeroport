@@ -18,8 +18,11 @@ const imagemin = require('gulp-image');
 const cache = require('gulp-cache');
 const cwebp = require('gulp-cwebp');
 const dwebp = require('gulp-dwebp');
-const panini = require('panini');;
-
+const panini = require('panini');
+const postcss = require('gulp-postcss');
+const webpInCss = require('webp-in-css/plugin');
+const postcssCombineMediaQuery = require('postcss-combine-media-query');
+const postcssSortMediaQueries = require('postcss-sort-media-queries');
 
 // Собирает все файлы html в страницы
 
@@ -53,6 +56,12 @@ const transportLibs = () => {
 // Конвертирует scss в css
 
 const translateScss = () => {
+    const plugins = [
+        webpInCss,
+        postcssCombineMediaQuery,
+        postcssSortMediaQueries
+    ];
+
     return src('src/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(scss({
@@ -63,6 +72,7 @@ const translateScss = () => {
     .pipe(autoprefixer({
         overrideBrowserslist: 'last 8 versions'
     }))
+    .pipe(postcss(plugins))
     .pipe(rename({
         basename: "main",
     }))

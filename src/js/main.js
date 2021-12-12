@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBurger = document.getElementById("menu-burger");
   const modal = document.getElementById("modal");
   const menu = document.getElementById("menu");
+  const modalMenu = document.getElementById("modal-menu");
 
   function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
@@ -57,10 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  menu.addEventListener('click',event=>{
-    event.preventDefault();
+  menu.addEventListener("click", (event) => {
     const target = event.target;
-    let isAnchor = false;
     if (target.href) {
       const hash = new URL(target.href).hash.substring(1);
       if (hash) {
@@ -68,7 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
         smoothScroll(hash);
       }
     }
-  })
+  });
+
+  modalMenu.addEventListener("click", (event) => {
+    const target = event.target;
+    if (target.href) {
+      const hash = new URL(target.href).hash.substring(1);
+      if (hash) {
+        event.preventDefault();
+        menuBurger.classList.toggle("active");
+        modal.classList.toggle("open");
+        smoothScroll(hash);
+        document.body.style.overflow = "";
+        document.body.style.paddingRight = "";
+      }
+    }
+  });
 
   menuBurger.addEventListener("click", () => {
     menuBurger.classList.toggle("active");
@@ -78,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollbarWidth = windowWidth - documentWidth;
     if (document.body.style.overflow === "hidden") {
       document.body.style.overflow = "";
-      document.body.style.paddingRight = "0px";
+      document.body.style.paddingRight = "";
     } else {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = scrollbarWidth + "px";
@@ -112,40 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
         autoHeight: false,
       },
     },
-  });
-
-  const fixedBlock = document.getElementById("fixed-block");
-  const headerInner = document.getElementById("header-inner");
-  const stickyHeader = document.getElementById("sticky-header");
-  let currentPageYOffset = window.pageYOffset;
-  document.addEventListener("scroll", () => {
-    const height = stickyHeader.clientHeight;
-    if (window.pageYOffset >= height) {
-      if (!fixedBlock.classList.contains("add")) {
-        headerInner.style.paddingTop = height + "px";
-        fixedBlock.classList.add("add");
-        fixedBlock.querySelector(".fixed-block__inner").append(stickyHeader);
-      } else {
-        if (!fixedBlock.classList.contains("show")) {
-          if (currentPageYOffset > window.pageYOffset) {
-            fixedBlock.classList.add("show");
-            setTimeout(() => {
-              fixedBlock.classList.remove("show");
-            }, 3000);
-          }
-        } else {
-          if (currentPageYOffset < window.pageYOffset) {
-            fixedBlock.classList.remove("show");
-          }
-        }
-      }
-    } else {
-      fixedBlock.classList.remove("add");
-      fixedBlock.classList.remove("show");
-      headerInner.style.paddingTop = "";
-      headerInner.prepend(stickyHeader);
-    }
-    currentPageYOffset = window.pageYOffset;
   });
 
   const accordionAnimation = document.getElementById("faq");
