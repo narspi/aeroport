@@ -14,7 +14,17 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         margin-bottom: 70px;
+    }
+
+    &__contacts-item {
+        &:last-child {
+            width: 100%;
+            font-size: 24px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
     }
 
     &__tel {

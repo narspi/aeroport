@@ -1,269 +1,329 @@
 .header {
-    min-height: var(--header-height);
-    background-image: url(../images/fullscreen-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top center;
-    color: $header-color;
-    font-family: $header-fonts, sans-serif;
+  // min-height: var(--header-height);
+  background-image: url(../images/header-plain.png),
+    url(../images/header-bg.png), linear-gradient(to bottom, #779fd0, #d9ecfd);
+  background-repeat: no-repeat;
+  background-size: 35% auto, 900px auto, 100% 100%;
+  background-position: top 28% left 40%, bottom left 43%, bottom center;
+  color: $header-color;
+  font-family: $header-fonts, sans-serif;
+  display: flex;
+  max-height: 700px;
+
+  &__inner {
     display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
+  &__top {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__descr {
+    margin: 0;
+    font-size: 14px;
+    line-height: 17px;
+    font-family: $header-descr, sans-serif;
+  }
+
+  &__bottom {
+    flex-grow: 1;
+    padding-bottom: 100px;
+  }
+
+  &__bottom-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 4%;
+    border-top: 1px solid transparent;
+  }
+
+  &__title {
+    width: 60%;
+    max-width: 900px;
+    color: #000;
+    font-family: $header-descr, sans-serif;
+    margin-bottom: 10%;
+    font-size: 24px;
+    line-height: 35px;
+    font-weight: 300;
+    b {
+      font-weight: 700;
     }
+  }
 
-    &__top {
-        padding: 40px 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+  &__contacts {
+    max-width: 360px;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: #fff;
+    color: #000;
+    padding: 25px 15px;
+    border-radius: 30px;
+    margin-left: 100px;
+    margin-top: -6%;
+  }
+
+  &__contacts-head {
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__contacts-item {
+    &:first-child {
+      text-align: center;
+    }
+  }
+
+  &__contacts-item + &__contacts-item {
+    margin-top: 20px;
+  }
+
+  &__tel {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  &__whatsup,
+  &__telegram,
+  &__instagram {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 10px 5px 40px;
+    font-size: 17px;
+    border: 3px solid #3a2c99;
+    border-radius: 30px;
+    svg {
+        fill: #3A2C99;
+        vertical-align: middle;
+        display: inline-block;
+        margin-right: 10px;
+    }
+    span {
+        vertical-align: middle;
+    }
+    &:hover {
+        border: 3px solid #0c8a0c;
+        svg {
+            fill: #0c8a0c;
+        }
+        span {
+            color: #0c8a0c;
+        }
+    }
+  }
+
+  @media (max-width: 1350px) {
+    & {
+      background-position: top 28% left 20%, bottom left 43%, bottom center;
+      background-size: 35% auto, 900px auto, 100% 100%;
     }
 
     &__descr {
-        margin: 0;
-        font-size: 14px;
-        line-height: 17px;
-        font-family: $header-descr,sans-serif;
-    }
-
-    &__bottom {
-        flex-grow: 1;
-        padding-bottom: 100px;
-    }
-    
-    &__bottom-inner {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 15%;
+      font-size: 12px;
+      line-height: 14px;
     }
 
     &__title {
-        width: 70%;
-        max-width: 900px;
-        color: #000;
-        font-family: $header-descr, sans-serif;
-        font-size: 35px;
-        line-height: 42px;
-        font-weight: 300;
-        b {
-            font-weight: 700;
-        }
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 75px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    &__contacts {
+      margin-left: 20px;
+    }
+  }
+
+  @media (max-width: 800px) {
+    & {
+      background-image: url(../images/header-plain.png),
+        linear-gradient(to bottom, #779fd0, #d9ecfd);
+      background-position: top 34% left 20%, bottom center;
+      background-size: 30% auto, 100% 100%;
+      max-height: unset;
+    }
+
+    &__top {
+      align-items: flex-start;
+    }
+
+    &__bottom-inner {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+
+    &__title {
+      width: 100%;
+      margin-top: 0%;
+      margin-bottom: 40%;
     }
 
     &__contacts {
-        max-width: 360px;
+      margin-top: 0;
+      margin-left: 0px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        background-image: url(../images/header-bg.png);
+        background-repeat: no-repeat;
+        background-position: left 20px bottom;
+        background-size: 100% auto;
         width: 100%;
-        flex-shrink: 0;
-        background-color: #fff;
-        color: #000;
-        padding: 25px 15px;
-        border-radius: 30px;
-        margin-left: 100px;
-        margin-top: -50px; 
+        height: 300px;
+        pointer-events: none;
+      }
     }
+  }
 
-    &__contacts-head {
-        font-size: 26px;
-        line-height: 36px;
-        font-weight: 400;
-        text-align: center;
-    }
-
-    &__contacts-item {
-        &:first-child {
-            text-align: center;
-        }
-    }
-
-    &__contacts-item + &__contacts-item {
-        margin-top: 20px;
+  @media (max-width: 600px) {
+    & {
+      background-position: top 37% left 20%, bottom center;
     }
 
     &__tel {
-        font-size: 48px;
-        font-weight: 700;
+      font-size: 35px;
     }
 
-    &__whatsup, &__telegram, &__instagram {
-        padding-left: 60px; 
-        font-size: 17px;
-        vertical-align: middle;
-        &::before {
-            vertical-align: middle;
-            display: inline-block;
-            margin-right: 10px;
-        }
+    &__whatsup,
+    &__telegram,
+    &__instagram {
+      padding-left: 20px;
     }
-
-    &__whatsup::before {
-        content: url(../images/whatsup-icon--purple.svg);
-    }
-
-    &__telegram::before {
-        content: url(../images/telegram-icon--purple.svg);
-    }
-
-    &__instagram::before {
-        content: url(../images/inst-icon--purple.svg);
-    }
-
-    @media (max-width: 1350px) {
-        &__descr {
-            font-size: 12px;
-            line-height: 14px;
-        }
-
-        &__title {
-            font-size: 24px;
-            line-height: 28px;
-            margin: 0;
-        }
-    }
-
-    @media (max-width: 1100px) {
-        &__title {
-            background-color: rgba(0,0,0, .7);
-            color: #fff;
-            padding: 20px;
-            border-radius: 20px;
-        }
-
-        &__contacts {
-            margin-left: 20px;
-        }
-    }
-
-    @media (max-width: 800px) {
-        &__top {
-            align-items: flex-start;
-        }
-
-        &__bottom-inner {
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            margin-top: 0;
-        }
-
-        &__title {
-            padding-bottom: 100px;
-            width: 100%;
-        }
-
-        &__contacts {
-            margin-left: 0px;
-        }
-    }
-
-    @media (max-width: 600px) {
-        &__tel {
-            font-size: 35px;
-        }
-
-        &__whatsup, &__telegram, &__instagram {
-            padding-left: 20px;
-        }
-    }
+  }
 }
 
 .logo {
-    font-size: 72px;
-    line-height: 1;
+  font-size: 72px;
+  line-height: 1;
+  @media (max-width: 800px) {
+    font-size: 44px;
+  }
 }
 
 .menu {
-    &__burger {
-        display: none;
+  &__burger {
+    display: none;
+  }
+
+  &__burger.fixed {
+      display: block;
+      position: fixed;
+      top: 40px;
+      right: 40px;
+      background-color: rgba(0, 0, 0, .349);
+      width: 31px;
+      height: 40px;
+      z-index: 100;
+      svg {
+          position: absolute;
+          top: 0;
+          left: 2px;
+      }
+  }
+
+  ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    li {
+      padding-left: 8px;
+      margin-left: 14px;
+      &::marker {
+        content: "|";
+      }
+
+      &:first-child {
+        padding-left: 0px;
+        &::marker {
+          content: "";
+        }
+      }
     }
 
+    a {
+      font-family: $global-font, sans-serif;
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 1350px) {
     ul {
-        margin: 0;
-        display: flex;
-        align-items: center;
-        li {
-            padding-left: 8px;
-            margin-left: 14px;
-            &::marker {
-                content: "|";
-            }
-
-            &:first-child {
-                padding-left: 0px;
-                &::marker {
-                    content: "";
-                }
-            }
-        }
-
+      li {
         a {
-            font-family: $global-font, sans-serif;
-            font-size: 24px;
+          font-size: 16px;
         }
+      }
     }
-
-    @media (max-width: 1350px) {
-        ul {
-            li {
-                a {
-                    font-size: 16px;
-                }
-            }
-        }
-    }
+  }
 }
 
 .burger-btn {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    transition: transform 400ms;
-    margin: 0;
-    overflow: hidden;
-    cursor: pointer;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: transform 400ms;
+  margin: 0;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-
 .burger-btn__line {
-    fill:none;
-    transition: stroke-dashoffset 400ms, transform 400ms;
-    transform-origin: 13px 20px;
-    stroke-linecap:round;
+  fill: none;
+  transition: stroke-dashoffset 400ms, transform 400ms;
+  transform-origin: 13px 20px;
+  stroke-linecap: round;
 }
 
 .burger-btn__line.top {
-    stroke-dasharray: 26 76;
+  stroke-dasharray: 26 76;
 }
 
 .burger-btn__line.bottom {
-    stroke-dasharray: 26 76;
+  stroke-dasharray: 26 76;
 }
 
 .menu__burger.active line {
-    transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .menu__burger.active .bottom {
-    stroke-dashoffset: -76;
+  stroke-dashoffset: -76;
 }
 
 .menu__burger.active .top {
-    stroke-dashoffset: -76;
+  stroke-dashoffset: -76;
 }
 
 .burger {
-    .menu {
-        &__burger {
-            display: block;
-            position: relative;
-            z-index: 101;
-        }
-
-        ul {
-            display: none;
-        }
+  .menu {
+    &__burger {
+      display: block;
+      position: relative;
+      z-index: 101;
+      &.fixed {
+          position: fixed;
+      }
     }
+
+    ul {
+      display: none;
+    }
+  }
 }

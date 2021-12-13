@@ -1,10 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init();
 
+  const header = document.getElementById('header');
   const menuBurger = document.getElementById("menu-burger");
   const modal = document.getElementById("modal");
   const menu = document.getElementById("menu");
   const modalMenu = document.getElementById("modal-menu");
+
+  const headerInner = document.getElementById("header-inner");
+  const stickyHeader = document.getElementById("sticky-header");
+  let currentPageYOffset = window.pageYOffset;
 
   function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
@@ -96,6 +101,15 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = scrollbarWidth + "px";
+    }
+  });
+
+  document.addEventListener("scroll", () => {
+    const height = stickyHeader.clientHeight;
+    if (window.pageYOffset >= height) {
+      menuBurger.classList.add('fixed');
+    } else {
+      menuBurger.classList.remove('fixed');
     }
   });
 

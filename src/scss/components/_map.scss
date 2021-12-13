@@ -10,12 +10,28 @@
     }
 
     &__list {
-        padding-left: 22px;
+        padding-left: 35px;
     }
 
     &__list-item {
         font-size: 20px;
         line-height: 32px;
+        position: relative;
+        &::marker {
+            content: "";
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: -35px;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            background-image: url(../images/marker-arrow.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
     }
 
     &__list-item + &__list-item {
