@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const headerInner = document.getElementById("header-inner");
   const stickyHeader = document.getElementById("sticky-header");
   let currentPageYOffset = window.pageYOffset;
+  
 
   function currentYPosition() {
     // Firefox, Chrome, Opera, Safari
@@ -98,9 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.body.style.overflow === "hidden") {
       document.body.style.overflow = "";
       document.body.style.paddingRight = "";
+      menuBurger.style.right = null;
+      modal.style.paddingRight = null;
     } else {
       document.body.style.overflow = "hidden";
       document.body.style.paddingRight = scrollbarWidth + "px";
+      const styleRight = window.getComputedStyle(menuBurger).right;
+      const modalPaddingRight = window.getComputedStyle(modal).paddingRight;
+      menuBurger.style.right = (Number(styleRight.match(/\d\d/)[0]) + scrollbarWidth) + "px";
+      modal.style.paddingRight = (Number(modalPaddingRight.match(/\d\d/)[0]) + scrollbarWidth) + "px";
     }
   });
 

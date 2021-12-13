@@ -98,7 +98,7 @@
       &:nth-child(3) {
         margin-right: 140px;
         & .reasons__item-wrap::before {
-          right: -90px;
+          right: -105px;
         }
       }
     }
@@ -144,7 +144,7 @@
 
       &:nth-child(3) {
         & .reasons__item-wrap::before {
-          right: -116px;
+          right: -130px;
         }
       }
     }
@@ -214,7 +214,7 @@
 
       &:nth-child(2) {
         & .reasons__item-wrap::before {
-          right: -36px;
+          right: 22px;
           top: 173px;
         }
       }
@@ -222,6 +222,7 @@
       &:nth-child(3) {
         & .reasons__item-wrap::before {
           right: 34px;
+          bottom: 0;
         }
       }
     }

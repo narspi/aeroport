@@ -65,15 +65,13 @@
     &__list {
         margin: 0px 60px 0px 100px;
         color: #fff;
+        list-style-type: '- ';
     }
 
     &__list-item {
         font-weight: 500;
         font-size: 22px;
         line-height: 45px;
-        &::marker {
-            content: "- "
-        }
     }
 
     @media (max-width: 1100px) {

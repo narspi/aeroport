@@ -10,21 +10,21 @@
     }
 
     &__list {
-        padding-left: 35px;
+        text-align: center;
+        list-style: none;
+        padding-left: 0;
     }
 
     &__list-item {
         font-size: 20px;
         line-height: 32px;
         position: relative;
-        &::marker {
-            content: "";
-        }
         &::before {
             content: "";
             position: absolute;
-            left: -35px;
-            top: 0;
+            left: 50%;
+            top: 100%;
+            transform: translateX(-50%);
             width: 30px;
             height: 30px;
             background-image: url(../images/marker-arrow.svg);
@@ -32,10 +32,14 @@
             background-size: cover;
             background-position: center;
         }
+
+        &:last-child::before {
+            display: none;
+        }
     }
 
     &__list-item + &__list-item {
-        margin-top: 15px;
+        margin-top: 30px;
     }
 
     &__block {

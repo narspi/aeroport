@@ -89,6 +89,10 @@
   &__tel {
     font-size: 48px;
     font-weight: 700;
+    color: #3A2C99;
+    &:hover {
+      color: #0c8a0c;
+    }
   }
 
   &__whatsup,

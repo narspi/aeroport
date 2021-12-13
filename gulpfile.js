@@ -86,7 +86,9 @@ const translateScss = () => {
     .pipe(rename({
         suffix: ".min",
     }))
-    .pipe(cssnano())
+    .pipe(cssnano({
+        autoprefixer: false
+    }))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('app/css'))
     .pipe(sync.stream());
